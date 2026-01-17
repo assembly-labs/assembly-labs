@@ -3,589 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UXRR - UX Rapid Research | Assembly Labs</title>
-    <meta name="description" content="Assembly Labs empowers expert teams to become super teams with practical LLM workflows. UXRR turns weeks of UX research into days.">
+
+    <!-- Primary Meta Tags -->
+    <title>Assembly Labs | We Build Apps and Software</title>
+    <meta name="title" content="Assembly Labs | We Build Apps and Software">
+    <meta name="description" content="Assembly Labs is a production studio and consultancy. We build apps and software—strategy to ship. We own every pixel and bit.">
+    <meta name="author" content="Drew Garraway">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://assemblylabs.co/">
+    <meta property="og:title" content="Assembly Labs | We Build Apps and Software">
+    <meta property="og:description" content="Production studio and consultancy. We build apps and software—strategy to ship. We own every pixel and bit.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://assemblylabs.co/">
+    <meta property="twitter:title" content="Assembly Labs | We Build Apps and Software">
+    <meta property="twitter:description" content="Production studio and consultancy. We build apps and software—strategy to ship. We own every pixel and bit.">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Colors */
-            --color-deep-navy: #001A33;
-            --color-sky-tint: #E6EEF5;
-            --color-steel-blue: #335C80;
-            --color-midnight-black: #000A14;
-            --color-cool-white: #F9FAFB;
-            --color-cloud-gray: #E5E7EB;
-            --color-slate-gray: #9CA3AF;
-            --color-gunmetal: #374151;
-            --color-mint-mist: #E8F7F1;
-            --color-fresh-teal: #33C4A5;
-            --color-deep-forest: #0F3D33;
-            --color-sun-glow: #FFF4E6;
-            --color-signal-orange: #FF7A1A;
-            --color-burnt-amber: #662B00;
-            
-            /* Typography */
-            --font-primary: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
-            --font-secondary: 'Libre Baskerville', Georgia, serif;
-            
-            /* Spacing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-            --spacing-2xl: 4rem;
-            --spacing-3xl: 6rem;
-            
-            /* Effects */
-            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-            --radius-md: 0.5rem;
-            --radius-lg: 1rem;
-            --radius-xl: 1.5rem;
-            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: var(--font-primary);
-            font-size: 14px;
-            line-height: 1.8;
-            color: var(--color-gunmetal);
-            background: var(--color-cool-white);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-        }
-        
-        /* Navigation */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: white;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-base);
-        }
-        
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--spacing-md) 0;
-        }
-        
-        .nav-brand {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--color-deep-navy);
-            text-decoration: none;
-            letter-spacing: 0.02em;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: var(--spacing-lg);
-        }
-        
-        .nav-link {
-            color: var(--color-steel-blue);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            transition: var(--transition-base);
-        }
-        
-        .nav-link:hover {
-            color: var(--color-fresh-teal);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-fresh-teal);
-            transition: var(--transition-base);
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-steel-blue) 100%);
-            color: white;
-            padding: var(--spacing-3xl) 0;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(51, 196, 165, 0.15) 0%, transparent 70%);
-            top: -250px;
-            right: -250px;
-            animation: float 20s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .h1 {
-            font-size: clamp(2.5rem, 5vw, 3.375rem);
-            line-height: 1.2;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            margin-bottom: var(--spacing-md);
-            opacity: 0;
-            animation: slideInUp 0.8s ease-out forwards;
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .subheader {
-            font-size: 18px;
-            line-height: 1.5;
-            font-weight: 500;
-            margin-bottom: var(--spacing-xl);
-            opacity: 0;
-            animation: slideInUp 0.8s ease-out 0.2s forwards;
-        }
-        
-        .btn-group {
-            display: flex;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: slideInUp 0.8s ease-out 0.4s forwards;
-        }
-        
-        .btn {
-            padding: 0.75rem 1.5rem;
-            font-weight: 600;
-            border-radius: var(--radius-md);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: var(--transition-base);
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            border: none;
-            font-family: var(--font-primary);
-            font-size: 14px;
-        }
-        
-        .btn-primary {
-            background: var(--color-fresh-teal);
-            color: var(--color-deep-forest);
-        }
-        
-        .btn-primary:hover {
-            background: var(--color-deep-forest);
-            color: var(--color-fresh-teal);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: var(--color-deep-navy);
-        }
-        
-        /* Section Styles */
-        section {
-            padding: var(--spacing-3xl) 0;
-        }
-        
-        .section-headline {
-            font-size: clamp(1.5rem, 3vw, 1.875rem);
-            line-height: 1.3;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--color-deep-navy);
-            margin-bottom: var(--spacing-lg);
-            text-align: center;
-        }
-        
-        .section-subheadline {
-            font-size: 18px;
-            line-height: 1.5;
-            font-weight: 500;
-            color: var(--color-steel-blue);
-            margin-bottom: var(--spacing-xl);
-            text-align: center;
-        }
-        
-        .body-text {
-            font-size: 14px;
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .body-text strong {
-            color: var(--color-deep-navy);
-            font-weight: 600;
-        }
-        
-        /* Feature Grid */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-xl);
-        }
-        
-        .feature-card {
-            background: white;
-            border: 1px solid var(--color-cloud-gray);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-lg);
-            transition: var(--transition-base);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .feature-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-            border-top: 4px solid var(--color-fresh-teal);
-        }
-        
-        .feature-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--color-deep-navy);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        /* Signature Metaphor */
-        .signature-metaphor {
-            font-family: var(--font-secondary);
-            font-style: italic;
-            font-size: 18px;
-            color: var(--color-steel-blue);
-            text-align: center;
-            margin-top: var(--spacing-xl);
-        }
-        
-        /* Product Section */
-        .product-section {
-            background: linear-gradient(180deg, var(--color-sky-tint) 0%, white 100%);
-        }
-        
-        .product-features {
-            background: white;
-            border-radius: var(--radius-xl);
-            padding: var(--spacing-xl);
-            margin: var(--spacing-xl) 0;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .product-features h4 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--color-deep-navy);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .product-features ul {
-            list-style: none;
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .product-features li {
-            padding: var(--spacing-sm) 0;
-            padding-left: var(--spacing-lg);
-            position: relative;
-        }
-        
-        .product-features li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--color-fresh-teal);
-            font-weight: 700;
-        }
-        
-        .highlight-box {
-            background: var(--color-mint-mist);
-            border-left: 4px solid var(--color-fresh-teal);
-            padding: var(--spacing-md);
-            border-radius: var(--radius-md);
-            margin: var(--spacing-lg) 0;
-        }
-        
-        /* Coming Soon Section */
-        .coming-soon {
-            background: var(--color-midnight-black);
-            color: white;
-        }
-        
-        .coming-soon .section-headline {
-            color: white;
-        }
-        
-        .coming-soon .section-subheadline {
-            color: var(--color-cloud-gray);
-        }
-        
-        /* Metrics Section */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-xl);
-            margin: var(--spacing-xl) 0;
-        }
-        
-        .metric-item {
-            text-align: center;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: var(--transition-base);
-        }
-        
-        .metric-item.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        .metric-number {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--color-fresh-teal);
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .metric-label {
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            color: var(--color-steel-blue);
-        }
-        
-        /* Value Proposition Grid */
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-xl);
-            margin-top: var(--spacing-xl);
-        }
-        
-        .value-item {
-            text-align: center;
-        }
-        
-        .value-item h4 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--color-deep-navy);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        /* Quote Section */
-        .quote-section {
-            background: var(--color-deep-navy);
-            color: white;
-            position: relative;
-        }
-        
-        .quote-section .section-headline {
-            color: white;
-        }
-        
-        .quote {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            padding: var(--spacing-xl);
-        }
-        
-        .quote::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            font-size: 4rem;
-            color: var(--color-fresh-teal);
-            opacity: 0.3;
-            font-family: var(--font-secondary);
-        }
-        
-        .quote-text {
-            font-family: var(--font-secondary);
-            font-size: 1.5rem;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .quote-author {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--color-fresh-teal);
-            text-align: right;
-        }
-        
-        /* Final CTA Section */
-        .final-cta {
-            background: linear-gradient(90deg, var(--color-fresh-teal) 0%, #7C3AED 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .final-cta .section-headline {
-            color: white;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--color-midnight-black);
-            color: var(--color-cloud-gray);
-            padding: var(--spacing-xl) 0 var(--spacing-lg);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-xl);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .footer-section h4 {
-            color: white;
-            font-weight: 600;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .footer-tagline {
-            font-family: var(--font-secondary);
-            font-style: italic;
-            font-size: 18px;
-            color: var(--color-fresh-teal);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: var(--spacing-lg);
-            border-top: 1px solid var(--color-steel-blue);
-            font-size: 12px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                gap: var(--spacing-sm);
-                font-size: 12px;
-            }
-            
-            .h1 {
-                font-size: 2rem;
-            }
-            
-            section {
-                padding: var(--spacing-xl) 0;
-            }
-            
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .btn-group {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .quote-text {
-                font-size: 1.2rem;
-            }
-        }
-        
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            margin: -1px;
-            padding: 0;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-    </style>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -593,10 +36,16 @@
         <div class="container">
             <div class="nav-container">
                 <a href="#" class="nav-brand">ASSEMBLY LABS</a>
-                <ul class="nav-menu">
-                    <li><a href="#what-we-do" class="nav-link">What We Do</a></li>
-                    <li><a href="#uxrr" class="nav-link">UXRR</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#approach" class="nav-link">Approach</a></li>
+                    <li><a href="mailto:drew@assemblylabs.co?subject=Let's%20talk%20software%20solutions" class="nav-cta">Get in Touch</a></li>
                 </ul>
             </div>
         </div>
@@ -604,202 +53,203 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="h1">Your team is already great. Our LLM-powered workflows make them unstoppable.</h1>
-                <p class="subheader">Assembly Labs trains expert teams to build better products faster through supercharged LLM stacks.</p>
-                <div class="btn-group">
-                    <a href="#uxrr" class="btn btn-primary">What Is UXRR</a>
-                    <a href="mailto:drew@assemblylabs.co?subject=Upskill my team" class="btn btn-secondary">Contact Us</a>
+                <span class="hero-label">Production Studio & Consultancy</span>
+                <h1>We build apps and software. <span class="gradient-text">Strategy to ship.</span></h1>
+                <p class="hero-description">We don't just advise—we build. Traditional experts who use AI where it accelerates and step in where it can't. Every decision, every line, every pixel—we own it.</p>
+                <div class="hero-cta-group">
+                    <a href="mailto:drew@assemblylabs.co?subject=Let's%20talk%20software%20solutions" class="btn-primary">
+                        Start a Project
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                    <a href="#services" class="btn-secondary">View Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <span class="section-label">Who We Are</span>
+                    <h2 class="section-title">Builders who advise, not advisors who occasionally build.</h2>
+                    <p>We are builders. Strategists. Designers. Developers. We use AI where it accelerates and step in where it can't. Every decision, every line, every pixel—we own it.</p>
+                    <p>Our rapid prototyping framework lets us validate UX and product-market fit before the expensive part, then accelerate development and delivery when it's time to build.</p>
+                    <p>We don't hand you a deck and walk away. We ship.</p>
+                </div>
+                <div class="about-quote reveal">
+                    <p>Most consultancies hand you a deck. We hand you working software.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 1: The Problem -->
-    <section id="what-we-do">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <h2 class="section-headline">Most teams aren't aligned in process or in tools. That's where we come in.</h2>
-            
-            <div style="max-width: 900px; margin: 0 auto;">
-                <p class="body-text">Your resources and experts know their craft. But tool overload, legacy systems, and too little (or too much) operating procedures throw wrenches in their flow. Meanwhile, consultancies overpromise "AI transformation" and stick you with a big bill for that "AI-powered" sticker solution that doesn't really stick.</p>
-                
-                <p class="body-text"><strong>We're different. We're an anti-consultancy.</strong></p>
-                
-                <p class="body-text">We don't parachute in with theory. We don't use buzzwords. We align your teams on practical LLM based workflows that work with your reality — then train them to deploy LLMs that amplify their expertise, not automate them away.</p>
+            <div class="section-header reveal">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Strategy, design, development, and delivery.</h2>
+                <p class="section-description">We handle the full product lifecycle—our own products and commissioned builds.</p>
             </div>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>Cut the Waste</h3>
-                    <p>Eliminate rote work. Return time to what matters: building.</p>
+            <div class="services-grid">
+                <div class="service-card reveal-stagger">
+                    <span class="service-number">01</span>
+                    <h3>Strategy</h3>
+                    <p>Product strategy and tech advisory that cuts through noise and gets to what matters.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>Align Your Teams</h3>
-                    <p>No more scattered efforts. We implement workflows that stick.</p>
+                <div class="service-card reveal-stagger">
+                    <span class="service-number">02</span>
+                    <h3>Product Design</h3>
+                    <p>UX and UI design grounded in real user needs, not assumptions.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>Accelerate Output</h3>
-                    <p>Ship better products, faster (really).</p>
+                <div class="service-card reveal-stagger">
+                    <span class="service-number">03</span>
+                    <h3>Rapid Prototyping</h3>
+                    <p>We fire up prototypes in days. Not months. Not weeks. See and interact with your product before committing to development.</p>
+                </div>
+                <div class="service-card reveal-stagger">
+                    <span class="service-number">04</span>
+                    <h3>Development</h3>
+                    <p>Full-stack development from prototype to production. Our framework accelerates delivery without cutting corners.</p>
+                </div>
+                <div class="service-card reveal-stagger">
+                    <span class="service-number">05</span>
+                    <h3>Tech Advisory</h3>
+                    <p>Honest guidance on architecture, tooling, and build-vs-buy decisions. No vendor lock-in agendas.</p>
+                </div>
+                <div class="service-card reveal-stagger">
+                    <span class="service-number">06</span>
+                    <h3>Delivery</h3>
+                    <p>We don't disappear after handoff. We ship, support, and iterate until it's right.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Who We Are -->
-    <section style="background: var(--color-sky-tint);">
+    <!-- Differentiators Section -->
+    <section class="differentiators">
         <div class="container">
-            <h2 class="section-headline">Teams Over Tech. Always.</h2>
-            
-            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <p class="body-text">We're builders who've been in the trenches, navigating enterprise constraints, startup chaos, and everything between. We know the difference between AI hype and AI that provides true value to your team and your end user.</p>
-                
-                <p class="body-text">Assembly Labs exists because expert teams deserve better than another "AI solution." You deserve hands-on, live training that respects your intelligence, acknowledges your constraints, and delivers results you can measure.</p>
-                
-                <p class="body-text"><strong>"From scattered to unstoppable. That's the transformation we build."</strong></p>
+            <div class="section-header reveal">
+                <span class="section-label">Why Assembly Labs</span>
+                <h2 class="section-title">We own every pixel and bit we deliver.</h2>
+                <p class="section-description">Accountable for the work. Not the hype.</p>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-card reveal-stagger">
+                    <div class="diff-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3>See it before you build it.</h3>
+                    <p>Our rapid prototyping framework lets you experience your product—real UX, real interactions—before committing to full development. This de-risks the entire build cycle.</p>
+                </div>
+                <div class="diff-card reveal-stagger">
+                    <div class="diff-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                        </svg>
+                    </div>
+                    <h3>AI expertise without the hype.</h3>
+                    <p>We're traditional experts who use AI and LLMs without apology. We know where they accelerate and where they fall short. The tools serve us—we don't serve the tools.</p>
+                </div>
+                <div class="diff-card reveal-stagger">
+                    <div class="diff-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3>We own the work.</h3>
+                    <p>Every pixel. Every bit. Every decision. We don't hand off and disappear. We ship, we stand behind it, and we're there when you need us.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Our Mission -->
-    <section>
+    <!-- Process Section -->
+    <section id="approach" class="process">
         <div class="container">
-            <h2 class="section-headline">Empower every team to turn vision into reality.</h2>
-            
-            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <p class="body-text">We're building a future where creation knows no bounds. Where technological complexity doesn't gate great ideas. Where your experts become super teams — equipped with workflows and LLM training that supercharge their output without replacing their judgment.</p>
-                
-                <p class="body-text"><strong>Our mission isn't to sell you tools. It's to supercharge your team.</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: UXRR Product -->
-    <section id="uxrr" class="product-section">
-        <div class="container">
-            <h2 class="section-headline">UX Rapid Research</h2>
-            <p class="section-subheadline">Turn weeks of research into days. Your team does the thinking — UXRR handles the heavy lifting.</p>
-            
-            <div style="max-width: 1000px; margin: 0 auto;">
-                <p class="body-text" style="text-align: center;">UXRR is built for product teams who need research velocity without sacrificing rigor. It's not a replacement for your UX researchers. UXRR is the LLM powered workflow that makes them fast. Very fast.</p>
-                
-                <div class="product-features">
-                    <h4>What UXRR Does</h4>
-                    <ul>
-                        <li><strong>Solid Foundation:</strong> Turning AI-avoidant team members into prompt engineers in days.</li>
-                        <li><strong>Rapid Synthesis:</strong> Process interview transcripts, surveys, and user feedback in minutes, not weeks</li>
-                        <li><strong>Pattern Recognition:</strong> Surface insights your team can act on immediately</li>
-                        <li><strong>Research Operations:</strong> Streamline the grunt work so your experts focus on strategy</li>
-                        <li><strong>Team Alignment:</strong> Share findings across product, design, and engineering—no more research silos</li>
+            <div class="process-content">
+                <div class="process-text reveal">
+                    <span class="section-label">Our Approach</span>
+                    <h2 class="section-title">See your product before you build it. Ship it faster when you do.</h2>
+                    <p>Our rapid prototyping framework lets you experience your product—real UX, real interactions—before committing to full development. This de-risks the entire build cycle.</p>
+                    <p>When we move to development, the same framework accelerates delivery and ensures scalability.</p>
+                    <ul class="process-list">
+                        <li>Validate product-market fit early</li>
+                        <li>Experience real UX before dev investment</li>
+                        <li>Reduce costly pivots mid-build</li>
+                        <li>Accelerate development timeline</li>
+                        <li>Ship with confidence</li>
                     </ul>
-                    
-                    <div class="highlight-box">
-                        <h4>The UXRR Difference</h4>
-                        <p>While others sell black-box "AI research tools," UXRR is a LLM-powered workflow system. Your researchers stay in control. The LLMs handle the rote analysis. Your team ships better products. Better, faster. Your team stays human, in-touch with customers, reality, and their own sanity.</p>
+                </div>
+                <div class="process-visual reveal">
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <span class="step-number">01</span>
+                            <div class="step-content">
+                                <h4>Strategy</h4>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">02</span>
+                            <div class="step-content">
+                                <h4>Prototype</h4>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">03</span>
+                            <div class="step-content">
+                                <h4>Validate</h4>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">04</span>
+                            <div class="step-content">
+                                <h4>Build</h4>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">05</span>
+                            <div class="step-content">
+                                <h4>Ship</h4>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <h4>Practical, Measurable Results</h4>
-                    <div class="metrics-grid">
-                        <div class="metric-item">
-                            <span class="metric-number">70%</span>
-                            <span class="metric-label">Reduction in research synthesis time</span>
-                        </div>
-                        <div class="metric-item">
-                            <span class="metric-number">3x</span>
-                            <span class="metric-label">Faster insight-to-implementation cycles</span>
-                        </div>
-                        <div class="metric-item">
-                            <span class="metric-number">100%</span>
-                            <span class="metric-label">Your experts doing expert work, not transcription</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: var(--spacing-xl);">
-                    <a href="mailto:drew@assemblylabs.co?subject=I want to demo UXRR and supercharge my UX team" class="btn btn-primary">Request UXRR Demo</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Coming Soon - LSD -->
-    <section class="coming-soon">
+    <!-- CTA Section -->
+    <section class="cta">
         <div class="container">
-            <h2 class="section-headline">Next: LSD — Ludicrous Software Development</h2>
-            <p class="section-subheadline">Design systems that scale. Coming soon.</p>
-            
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p class="body-text">Your design team is building something big. LSD will help them do it faster without compromising quality or consistency.</p>
-                
-                <p class="body-text">We're not ready to show it yet. But if you're wrestling with design systems, component libraries, or cross-team design alignment, you'll want to see this.</p>
-                
-                <div style="margin-top: var(--spacing-xl);">
-                    <a href="mailto:drew@assemblylabs.co?subject=Keep me updated on Ludicrous Software Development" class="btn btn-secondary">Join the Waitlist</a>
-                </div>
+            <div class="cta-content reveal">
+                <span class="section-label">Start Building</span>
+                <h2 class="section-title">You have a product idea. Let's make it real.</h2>
+                <p class="section-description">We'll show you a working prototype in days, not months. Then we build the real thing.</p>
+                <a href="mailto:drew@assemblylabs.co?subject=Let's%20talk%20software%20solutions" class="btn-primary">
+                    Get in Touch
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Section 6: The Value -->
-    <section>
-        <div class="container">
-            <h2 class="section-headline">Real training. Real workflows. Real results.</h2>
-            <p class="section-subheadline">Here's what changes when your team works with Assembly Labs:</p>
-            
-            <div class="metrics-grid">
-                <div class="metric-item">
-                    <span class="metric-number">60%</span>
-                    <span class="metric-label">Faster product development cycles</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-number">40%</span>
-                    <span class="metric-label">Cut of wasted work from your process</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-number">3x</span>
-                    <span class="metric-label">Output without adding headcount</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-number">0%</span>
-                    <span class="metric-label">Turnover</span>
-                </div>
-            </div>
-            
-            <div class="value-grid">
-                <div class="value-item">
-                    <h4>Your Experts Stay Experts</h4>
-                    <p class="body-text">We don't replace your team. We supercharge them. LLMs handle the grunt work. Your people do what they do best: build great products.</p>
-                </div>
-                <div class="value-item">
-                    <h4>Implementation, Not Theory</h4>
-                    <p class="body-text">No 200-page playbooks. We deploy workflows that work with your legacy systems, your red tape, your reality. Training that sticks from day one.</p>
-                </div>
-                <div class="value-item">
-                    <h4>Measurable Impact</h4>
-                    <p class="body-text">Every workflow we implement comes with clear metrics. You'll know exactly what's working—and what's not.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 7: Testimonial -->
-    <section class="quote-section">
-        <div class="container">
-            <h2 class="section-headline">From scattered to unstoppable.</h2>
-            
-            <div class="quote">
-                <p class="quote-text">Assembly Labs didn't just train our team on LLMs, they also transformed how we work together. We now have more time to strategize ideas and have automated the rote onto the bot workflows. Our product team ships features faster. What used to take years takes mere months.</p>
-                <p class="quote-author">— Gui Costin, CEO, Dakota</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 8: Final CTA -->
-    <section id="contact" class="final-cta">
-        <div class="container">
-            <h2 class="section-headline">Your team is ready to upskill.</h2>
-            <p class="body-text" style="font-size: 18px; margin-bottom: var(--spacing-xl);">Stop drowning in AI decision fatigue. Start building your super team.</p>
-            <a href="mailto:drew@assemblylabs.co?subject=Upskill my team" class="btn btn-primary" style="background: white; color: var(--color-deep-navy);">Contact Us</a>
         </div>
     </section>
 
@@ -807,69 +257,17 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Assembly Labs</h4>
-                    <p class="footer-tagline">Super teams. Supercharged by LLMs.</p>
-                    <p>Greater Philadelphia, PA</p>
-                    <p><a href="mailto:drew@assemblylabs.co" style="color: var(--color-fresh-teal); text-decoration: none;">drew@assemblylabs.co</a></p>
+                <div class="footer-brand">Assembly Labs</div>
+                <div class="footer-info">
+                    <span>Drew Garraway, Founder</span>
+                    <span>Greater Philadelphia, PA</span>
+                    <a href="mailto:drew@assemblylabs.co">drew@assemblylabs.co</a>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Assembly Labs. Teams Over Tech.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
-                }
-            });
-        }, observerOptions);
-
-        // Observe feature cards
-        document.querySelectorAll('.feature-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // Observe metric items
-        document.querySelectorAll('.metric-item').forEach(item => {
-            observer.observe(item);
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="main.js" defer></script>
 </body>
 </html>
