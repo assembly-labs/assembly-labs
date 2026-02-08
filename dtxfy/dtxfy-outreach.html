@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Denise | Assembly Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-navy: #001A33;
+            --sky-tint: #E6EEF5;
+            --steel-blue: #335C80;
+            --midnight-black: #000A14;
+            --cool-white: #F9FAFB;
+            --cloud-gray: #E5E7EB;
+            --slate-gray: #9CA3AF;
+            --gunmetal: #374151;
+            --fresh-teal: #33C4A5;
+            --deep-forest: #0F3D33;
+            --mint-mist: #E8F7F1;
+            --signal-orange: #FF7A1A;
+            --royal-violet: #7C3AED;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', system-ui, sans-serif;
+            color: var(--gunmetal);
+            background: var(--cool-white);
+            line-height: 1.8;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Top bar ── */
+        .topbar {
+            background: var(--deep-navy);
+            padding: 14px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .topbar-brand {
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: white;
+        }
+        .topbar-brand span { color: var(--fresh-teal); }
+        .topbar-meta {
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            color: var(--slate-gray);
+            text-transform: uppercase;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(160deg, var(--deep-navy) 0%, #0a2e4d 50%, var(--steel-blue) 100%);
+            color: white;
+            padding: 100px 32px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(51, 196, 165, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-label {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--fresh-teal);
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding: 6px 14px;
+            border: 1px solid rgba(51, 196, 165, 0.3);
+            border-radius: 4px;
+            opacity: 0;
+            animation: fadeUp 0.6s ease-out 0.2s forwards;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.01em;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeUp 0.6s ease-out 0.4s forwards;
+        }
+        .hero h1 em {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--fresh-teal);
+        }
+        .hero-sub {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.75);
+            max-width: 560px;
+            opacity: 0;
+            animation: fadeUp 0.6s ease-out 0.6s forwards;
+        }
+
+        /* ── Sections ── */
+        .section {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 72px 32px;
+        }
+        .section-alt {
+            background: white;
+        }
+        .section-navy {
+            background: var(--deep-navy);
+            color: white;
+        }
+        .section-navy .section-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 72px 32px;
+        }
+        .section-tint {
+            background: var(--sky-tint);
+        }
+
+        /* ── Typography ── */
+        h2 {
+            font-size: clamp(1.4rem, 3vw, 1.75rem);
+            font-weight: 600;
+            color: var(--deep-navy);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        .section-navy h2 {
+            color: white;
+        }
+        h2 em {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--fresh-teal);
+        }
+
+        p + p { margin-top: 16px; }
+
+        .accent-text {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--steel-blue);
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: var(--deep-navy);
+            font-weight: 600;
+        }
+        .section-navy .highlight {
+            color: var(--fresh-teal);
+        }
+
+        /* ── Divider ── */
+        .divider {
+            width: 48px;
+            height: 3px;
+            background: var(--fresh-teal);
+            border-radius: 2px;
+            margin: 32px 0;
+        }
+        
+        /* ── Quote block ── */
+        .quote-block {
+            border-left: 3px solid var(--fresh-teal);
+            padding: 20px 24px;
+            margin: 28px 0;
+            background: var(--mint-mist);
+            border-radius: 0 8px 8px 0;
+        }
+        .quote-block p {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-style: italic;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--deep-forest);
+        }
+
+        .section-navy .quote-block {
+            background: rgba(51, 196, 165, 0.08);
+            border-left-color: var(--fresh-teal);
+        }
+        .section-navy .quote-block p {
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* ── Two users block ── */
+        .two-sides {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 28px 0;
+        }
+        @media (max-width: 600px) {
+            .two-sides { grid-template-columns: 1fr; }
+        }
+        .side-card {
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid var(--cloud-gray);
+            background: white;
+        }
+        .section-navy .side-card {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(255,255,255,0.1);
+        }
+        .side-card-label {
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--fresh-teal);
+            margin-bottom: 10px;
+        }
+        .side-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--deep-navy);
+            margin-bottom: 8px;
+        }
+        .section-navy .side-card h3 {
+            color: white;
+        }
+        .side-card p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--gunmetal);
+        }
+        .section-navy .side-card p {
+            color: rgba(255,255,255,0.65);
+        }
+
+        /* ── Credentials row ── */
+        .cred-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .cred-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 4px;
+            background: var(--sky-tint);
+            color: var(--steel-blue);
+        }
+        .section-navy .cred-tag {
+            background: rgba(51, 196, 165, 0.1);
+            color: var(--fresh-teal);
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--steel-blue) 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta-inner {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 80px 32px;
+        }
+        .cta-inner h2 {
+            color: white;
+            margin-bottom: 16px;
+        }
+        .cta-inner p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--fresh-teal);
+            color: var(--deep-forest);
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover {
+            background: white;
+            color: var(--deep-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--midnight-black);
+            color: var(--slate-gray);
+            padding: 32px;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+        }
+        .footer a {
+            color: var(--fresh-teal);
+            text-decoration: none;
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .hero-label, .hero h1, .hero-sub { opacity: 1; animation: none; }
+        }
+
+        /* ── Mobile Optimizations ── */
+        @media (max-width: 480px) {
+            .topbar {
+                flex-direction: column;
+                gap: 6px;
+                padding: 12px 20px;
+                text-align: center;
+            }
+            .topbar-meta {
+                font-size: 10px;
+            }
+            .hero {
+                padding: 60px 20px 50px;
+            }
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            .hero-sub {
+                font-size: 14px;
+            }
+            .section {
+                padding: 48px 20px;
+            }
+            .section-navy .section-inner {
+                padding: 48px 20px;
+            }
+            .cta-inner {
+                padding: 56px 20px;
+            }
+            .cta-btn {
+                padding: 14px 28px;
+                font-size: 12px;
+            }
+            .quote-block {
+                padding: 16px 18px;
+            }
+            .footer {
+                padding: 24px 20px;
+            }
+            .footer p {
+                line-height: 1.8;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="topbar-brand">Assembly <span>Labs</span></div>
+        <div class="topbar-meta">Prepared for Denise Lehmann, dtXfy</div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-label">A note from Drew Garraway</div>
+            <h1>You don't need a dev shop.<br>You need a <em>builder</em> who gets the business.</h1>
+            <p class="hero-sub">Denise, it was great meeting you. You mentioned you're bidding out the build for bespoke software to replace MINDBODY. I want to make the case for a different kind of partnership.</p>
+        </div>
+    </section>
+
+    <!-- Section: The Real Problem -->
+    <div class="section-alt">
+        <div class="section reveal">
+            <h2>MINDBODY wasn't built for <em>your</em> business.</h2>
+            <div class="divider"></div>
+            <p>It was built for every business. That's the problem. Off-the-shelf platforms force you to conform your operations to someone else's idea of how a wellness studio should run. And when you're scaling to multiple locations with franchise ambitions, those compromises multiply.</p>
+            <p>You don't just need software that handles bookings. You need software that <span class="highlight">encodes how dtXfy operates</span>, from the front desk experience to membership management, multi-location oversight, franchise onboarding, and the operational playbook that makes each new studio feel like your Manayunk and Wayne locations from day one.</p>
+            <p>That's a product problem, not just a development problem. And it's exactly the kind of problem I've spent my career solving.</p>
+        </div>
+    </div>
+
+    <!-- Section: Two Users -->
+    <div class="section-navy">
+        <div class="section-inner reveal">
+            <h2>Great software serves <em>two</em> users.</h2>
+            <div class="divider"></div>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 28px;">Most dev teams fixate on the customer-facing app and treat the back office as an afterthought. That's how you end up with software that looks great but creates more work for your team. At Assembly Labs, we build for both sides of the counter.</p>
+
+            <div class="two-sides">
+                <div class="side-card">
+                    <div class="side-card-label">User 1</div>
+                    <h3>Your members</h3>
+                    <p>The person booking an infrared sauna session, managing their membership, or exploring red light therapy for the first time. Their experience should feel as warm and intentional as your studio interiors.</p>
+                </div>
+                <div class="side-card">
+                    <div class="side-card-label">User 2</div>
+                    <h3>Your operators</h3>
+                    <p>Your Renewal Specialists, studio managers, and (eventually) franchise owners. They need tools that make running a dtXfy studio intuitive, not another system to fight with.</p>
+                </div>
+            </div>
+
+            <p style="color: rgba(255,255,255,0.7);">When both users are accounted for from day one, the software becomes a competitive advantage, not just a cost center. It becomes the system that lets you open your third, fifth, and fifteenth location without the operational chaos that kills most franchise models.</p>
+        </div>
+    </div>
+
+    <!-- Section: Why Assembly Labs -->
+    <div class="section-alt">
+        <div class="section reveal">
+            <h2>We don't advise. We <em>build</em>.</h2>
+            <div class="divider"></div>
+            <p>Assembly Labs is a production studio and consultancy. Strategy, product design, development, delivery. I've built teams and shipped products for Apple, Tesla, Google, and Beyond Meat. I know what it takes to deliver at the highest level, and I know how to do it with lean, expert teams that move fast without cutting corners.</p>
+            <p>My teams are smaller by design. Smaller teams that understand the business get up to speed faster and build better products than large teams that don't. There's no army of junior devs learning your industry on your dime. Every person on the project knows why they're building what they're building.</p>
+
+            <div class="cred-row">
+                <span class="cred-tag">Apple</span>
+                <span class="cred-tag">Tesla</span>
+                <span class="cred-tag">Google</span>
+                <span class="cred-tag">Beyond Meat</span>
+                <span class="cred-tag">Product Strategy</span>
+                <span class="cred-tag">Franchise Operations</span>
+            </div>
+
+            <div class="quote-block">
+                <p>My greatest expertise is building software that helps service and retail businesses scale and sell. The kind of product that turns a two-location studio into a franchise-ready operation.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: How We Work -->
+    <div class="section-tint">
+        <div class="section reveal">
+            <h2>See it before you <em>build</em> it.</h2>
+            <div class="divider"></div>
+            <p>Here's where we're different. Before we write a line of production code, you'll have a working prototype in your hands. Real screens, real interactions, real workflows. You'll see your booking system, your member portal, your operator dashboard, and your franchise management tools before committing to a full build.</p>
+            <p>This isn't a wireframe deck. It's a product you can touch, test, and validate with your team. It de-risks the entire project and ensures we're building the right thing, not just building something.</p>
+            <p>When we move into development, that same rapid prototyping framework accelerates delivery. You get to market faster. You spend less. And you ship with confidence because you've already validated what you're shipping.</p>
+        </div>
+    </div>
+
+    <!-- Section: The Offshore Question -->
+    <div class="section-navy">
+        <div class="section-inner reveal">
+            <h2>A word on <em>offshore</em> development.</h2>
+            <div class="divider"></div>
+            <p style="color: rgba(255,255,255,0.7);">You'll likely receive bids from offshore development shops, often at prices that seem too good to pass up. I've worked with offshore teams myself. Some are talented. But the calculus has fundamentally changed in the past two years, and for a health and wellness business handling sensitive customer data, the risks deserve a clear-eyed look.</p>
+
+            <h3 style="color: var(--fresh-teal); font-size: 14px; margin-top: 32px; margin-bottom: 12px; letter-spacing: 0.04em;">What is technical debt?</h3>
+            <p style="color: rgba(255,255,255,0.7);">Technical debt is what accumulates when developers take shortcuts to meet deadlines. It's the difference between code that works today and code that's maintainable tomorrow. Offshore teams, often under pressure to deliver quickly at low cost, frequently skip testing, documentation, and proper architecture. The result: your product becomes slower to evolve, bugs multiply, and eventually you're paying American developers premium rates just to understand and fix what was built cheaply overseas. <a href="https://www.warpdevelopment.com/why-offshore-software-development-fails/" style="color: var(--fresh-teal);">Studies show</a> that fixing issues post-launch can cost up to 100x more than addressing them during development.</p>
+
+            <h3 style="color: var(--fresh-teal); font-size: 14px; margin-top: 32px; margin-bottom: 12px; letter-spacing: 0.04em;">The accountability gap</h3>
+            <p style="color: rgba(255,255,255,0.7);">When something goes wrong with an offshore team, you have limited recourse. Different time zones mean delays in communication. Cultural and language barriers create misunderstandings that compound over time. And when the project ends, you're often left with minimal documentation, creating a dependency on a team that may have already moved on. <a href="https://softwaredevelopmentontario.ca/the-dark-side-of-offshore-development/" style="color: var(--fresh-teal);">As one analysis put it</a>: "The hidden challenges—technical debt, communication friction, security risks, and weak ownership—can silently drain resources and undermine product quality long before anyone notices."</p>
+
+            <h3 style="color: var(--fresh-teal); font-size: 14px; margin-top: 32px; margin-bottom: 12px; letter-spacing: 0.04em;">Data security: A real concern for wellness businesses</h3>
+            <p style="color: rgba(255,255,255,0.7);">This is where it gets serious. dtXfy will handle HSA/FSA payments, membership data, and potentially HIPAA-adjacent health information. Offshore call centers and development shops have been at the center of major data breaches where customer information was actively sold.</p>
+
+            <div class="quote-block" style="margin-top: 20px;">
+                <p style="font-style: normal; font-family: 'Poppins', sans-serif; font-size: 13px;"><strong style="color: var(--fresh-teal);">Coinbase, 2024–2025:</strong> Offshore support agents at TaskUs in India were <a href="https://fortune.com/crypto/2025/05/29/coinbase-hack-the-community-taskus-bpos-teenagers/" style="color: var(--fresh-teal);">bribed $200 per screenshot</a> to capture and sell customer data. Over 69,000 users were affected. Estimated losses: $180–400 million. 226 employees were terminated. <a href="https://www.theblock.co/post/383790/coinbase-ceo-announces-first-arrest-in-india-over-insider-data-breach-more-still-to-come" style="color: var(--fresh-teal);">Arrests followed in India</a>.</p>
+            </div>
+
+            <div class="quote-block" style="margin-top: 12px;">
+                <p style="font-style: normal; font-family: 'Poppins', sans-serif; font-size: 13px;"><strong style="color: var(--fresh-teal);">BSNL Telecom, 2024:</strong> A breach at India's state-owned telecom compromised millions of users' data, which <a href="https://www.corbado.com/blog/data-breaches-India" style="color: var(--fresh-teal);">surfaced for sale on dark web marketplaces</a> shortly after.</p>
+            </div>
+
+            <p style="color: rgba(255,255,255,0.7); margin-top: 20px;">The <a href="https://globalinitiative.net/analysis/joint-us-india-focus-on-cyber-scams-is-a-chance-to-curb-a-global-fraud-epidemic/" style="color: var(--fresh-teal);">Indian Cyber Crime Coordination Centre</a> reported an average of 7,000 cybercrime complaints per day in early 2024. This isn't fear-mongering—it's the operating environment. When your software handles customer PII and payment data, the provenance of your development team matters.</p>
+
+            <h3 style="color: var(--fresh-teal); font-size: 14px; margin-top: 32px; margin-bottom: 12px; letter-spacing: 0.04em;">AI changed the math</h3>
+            <p style="color: rgba(255,255,255,0.7);">Here's the shift most people haven't caught up to yet: AI-assisted development has made American developers cost-competitive again. The productivity gains from tools like GitHub Copilot, Claude, and purpose-built AI workflows mean a small U.S. team can now deliver at speeds that previously required large offshore teams—with better quality, clearer communication, and full accountability under U.S. law.</p>
+            <p style="color: rgba(255,255,255,0.7);">At Assembly Labs, we've built our entire practice around this advantage. We leverage AI not as a gimmick, but as a force multiplier that lets us deliver enterprise-quality work at rates that compete with offshore—without the hidden costs, the security risks, or the technical debt that shows up six months later.</p>
+        </div>
+    </div>
+
+    <!-- Section: Franchise-Ready -->
+    <div class="section-tint">
+        <div class="section reveal">
+            <h2>Built for one studio.<br>Architected for <em>many</em>.</h2>
+            <div class="divider"></div>
+            <p>dtXfy has the potential to be a nationwide phenomenon. Main Line Today said it, and you know it. But scaling a service business through franchising requires operational software that most founders don't think about until it's too late.</p>
+
+            <div class="quote-block">
+                <p>I don't intend to build a product that works "fine enough." The difference at Assembly Labs is that we build with the business owner. Your growth ambitions aren't a footnote in the spec doc. They're the foundation of the architecture.</p>
+            </div>
+
+            <p>From multi-location management to franchise onboarding workflows, from centralized branding controls to location-specific service configurations, we'll build the software that makes opening a new dtXfy studio feel repeatable and reliable. The technology should make scaling easier, not harder.</p>
+        </div>
+    </div>
+
+    <!-- Section: Future Vision -->
+    <div class="section-navy">
+        <div class="section-inner reveal">
+            <h2>One more idea, <em>for fun</em>.</h2>
+            <div class="divider"></div>
+            <p style="color: rgba(255,255,255,0.7);">Have you thought about running your studios with less overhead, fewer resources—and being open 24/7?</p>
+            <p style="color: rgba(255,255,255,0.7);">Think about the revenue opportunity. Customers book their rooms and sessions 100% remotely. They enter their pods using their cell phone to unlock the door. Off-hours, a virtual concierge handles questions and issues. Your on-site team focuses entirely on what matters: maintaining, sanitizing, and replenishing the rooms and materials.</p>
+
+            <div class="two-sides" style="margin-top: 28px;">
+                <div class="side-card">
+                    <div class="side-card-label">Revenue</div>
+                    <h3>24/7 availability</h3>
+                    <p>Capture early-morning and late-night sessions without staffing a front desk around the clock.</p>
+                </div>
+                <div class="side-card">
+                    <div class="side-card-label">Operations</div>
+                    <h3>Leaner teams</h3>
+                    <p>Shift labor from check-in duties to maintenance and member experience—where it actually matters.</p>
+                </div>
+            </div>
+
+            <p style="color: rgba(255,255,255,0.7); margin-top: 24px;">This is Phase 5 thinking. Maybe further. But it's the kind of thing a software partner should be imagining alongside you—not just executing a spec. The best technology investments don't just solve today's problems. They open doors you hadn't considered yet.</p>
+
+            <div class="quote-block" style="margin-top: 24px;">
+                <p>A partner in software should think like a partner in your business.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: What I'd Like to Propose -->
+    <div class="section-alt">
+        <div class="section reveal">
+            <h2>The ask is <em>simple</em>.</h2>
+            <div class="divider"></div>
+            <p>I'd like to offer my time to sit down with you and understand what you're building, where you're headed, and what's not working today. No pitch deck, no sales pressure. Just a conversation between a builder and a founder who both care about getting the product right.</p>
+            <p>If it's a fit, we prototype. You see your product in weeks, not months. If it's not a fit, you walk away with a clearer picture of what to ask for from whoever you hire. Either way, you win.</p>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-inner reveal">
+            <h2>Let's talk about what dtXfy <em>becomes</em>.</h2>
+            <p>30 minutes. No deck. Just a real conversation about your product and your ambitions.</p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a href="sms:+13107394396" class="cta-btn">Text Drew</a>
+                <a href="tel:+13107394396" class="cta-btn" style="background: white; color: var(--deep-navy);">Call Drew</a>
+            </div>
+            <p style="margin-top: 16px; font-size: 14px; color: rgba(255,255,255,0.5);">310-739-4396</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong style="color: white;">Assembly Labs</strong> &nbsp;·&nbsp; Drew Garraway &nbsp;·&nbsp; Greater Philadelphia, PA</p>
+        <p style="margin-top: 6px;"><a href="mailto:drew@assemblylabs.co">drew@assemblylabs.co</a> &nbsp;·&nbsp; <a href="https://assemblylabs.co">assemblylabs.co</a></p>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll reveals
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
