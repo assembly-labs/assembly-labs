@@ -36,8 +36,8 @@
             font-family: 'Poppins', system-ui, sans-serif;
             color: var(--gunmetal);
             background: var(--cool-white);
-            line-height: 1.8;
-            font-size: 15px;
+            line-height: 1.7;
+            font-size: 17px;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -121,9 +121,9 @@
             color: var(--fresh-teal);
         }
         .hero-sub {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.7;
-            color: rgba(255,255,255,0.75);
+            color: rgba(255,255,255,0.85);
             max-width: 560px;
             opacity: 0;
             animation: fadeUp 0.6s ease-out 0.6s forwards;
@@ -131,7 +131,7 @@
 
         /* ── Sections ── */
         .section {
-            max-width: 720px;
+            max-width: 740px;
             margin: 0 auto;
             padding: 72px 32px;
         }
@@ -143,9 +143,12 @@
             color: white;
         }
         .section-navy .section-inner {
-            max-width: 720px;
+            max-width: 740px;
             margin: 0 auto;
             padding: 72px 32px;
+        }
+        .section-navy p {
+            color: rgba(255,255,255,0.85);
         }
         .section-tint {
             background: var(--sky-tint);
@@ -208,7 +211,7 @@
         .quote-block p {
             font-family: 'Libre Baskerville', Georgia, serif;
             font-style: italic;
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.7;
             color: var(--deep-forest);
         }
@@ -365,6 +368,9 @@
 
         /* ── Mobile Optimizations ── */
         @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
             .topbar {
                 flex-direction: column;
                 gap: 6px;
@@ -381,7 +387,7 @@
                 font-size: 1.75rem;
             }
             .hero-sub {
-                font-size: 14px;
+                font-size: 16px;
             }
             .section {
                 padding: 48px 20px;
@@ -398,6 +404,9 @@
             }
             .quote-block {
                 padding: 16px 18px;
+            }
+            .quote-block p {
+                font-size: 15px;
             }
             .footer {
                 padding: 24px 20px;
@@ -441,7 +450,7 @@
         <div class="section-inner reveal">
             <h2>Great software serves <em>two</em> users.</h2>
             <div class="divider"></div>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: 28px;">Most dev teams fixate on the customer-facing app and treat the back office as an afterthought. That's how you end up with software that looks great but creates more work for your team. At Assembly Labs, we build for both sides of the counter.</p>
+            <p style="margin-bottom: 28px;">Most dev teams fixate on the customer-facing app and treat the back office as an afterthought. That's how you end up with software that looks great but creates more work for your team. At Assembly Labs, we build for both sides of the counter.</p>
 
             <div class="two-sides">
                 <div class="side-card">
@@ -456,7 +465,7 @@
                 </div>
             </div>
 
-            <p style="color: rgba(255,255,255,0.7);">When both users are accounted for from day one, the software becomes a competitive advantage, not just a cost center. It becomes the system that lets you open your third, fifth, and fifteenth location without the operational chaos that kills most franchise models.</p>
+            <p>When both users are accounted for from day one, the software becomes a competitive advantage, not just a cost center. It becomes the system that lets you open your third, fifth, and fifteenth location without the operational chaos that kills most franchise models.</p>
         </div>
     </div>
 
@@ -499,16 +508,16 @@
         <div class="section-inner reveal">
             <h2>A word on <em>offshore</em> development.</h2>
             <div class="divider"></div>
-            <p style="color: rgba(255,255,255,0.7);">You'll likely receive bids from offshore development shops, often at prices that seem too good to pass up. I've worked with offshore teams myself. Some are talented. But the calculus has fundamentally changed in the past two years, and for a health and wellness business handling sensitive customer data, the risks deserve a clear-eyed look.</p>
+            <p>You'll likely receive bids from offshore development shops, often at prices that seem too good to pass up. I've worked with offshore teams myself. Some are talented. But the calculus has fundamentally changed in the past two years, and for a health and wellness business handling sensitive customer data, the risks deserve a clear-eyed look.</p>
 
             <h3 style="color: var(--fresh-teal); font-size: 14px; margin-top: 32px; margin-bottom: 12px; letter-spacing: 0.04em;">What is technical debt?</h3>
-            <p style="color: rgba(255,255,255,0.7);">Technical debt is what accumulates when developers take shortcuts to meet deadlines. It's the difference between code that works today and code that's maintainable tomorrow. Offshore teams, often under pressure to deliver quickly at low cost, frequently skip testing, documentation, and proper architecture. The result: your product becomes slower to evolve, bugs multiply, and eventually you're paying American developers premium rates just to understand and fix what was built cheaply overseas. <a href="https://www.warpdevelopment.com/why-offshore-software-development-fails/" style="color: var(--fresh-teal);">Studies show</a> that fixing issues post-launch can cost up to 100x more than addressing them during development.</p>
+            <p>Technical debt is what accumulates when developers take shortcuts to meet deadlines. It's the difference between code that works today and code that's maintainable tomorrow. Offshore teams, often under pressure to deliver quickly at low cost, frequently skip testing, documentation, and proper architecture. The result: your product becomes slower to evolve, bugs multiply, and eventually you're paying American developers premium rates just to understand and fix what was built cheaply overseas. <a href="https://www.warpdevelopment.com/why-offshore-software-development-fails/" style="color: var(--fresh-teal);">Studies show</a> that fixing issues post-launch can cost up to 100x more than addressing them during development.</p>
 
             <h3 style="color: var(--fresh-teal); font-size: 14px; margin-top: 32px; margin-bottom: 12px; letter-spacing: 0.04em;">The accountability gap</h3>
-            <p style="color: rgba(255,255,255,0.7);">When something goes wrong with an offshore team, you have limited recourse. Different time zones mean delays in communication. Cultural and language barriers create misunderstandings that compound over time. And when the project ends, you're often left with minimal documentation, creating a dependency on a team that may have already moved on. <a href="https://softwaredevelopmentontario.ca/the-dark-side-of-offshore-development/" style="color: var(--fresh-teal);">As one analysis put it</a>: "The hidden challenges—technical debt, communication friction, security risks, and weak ownership—can silently drain resources and undermine product quality long before anyone notices."</p>
+            <p>When something goes wrong with an offshore team, you have limited recourse. Different time zones mean delays in communication. Cultural and language barriers create misunderstandings that compound over time. And when the project ends, you're often left with minimal documentation, creating a dependency on a team that may have already moved on. <a href="https://softwaredevelopmentontario.ca/the-dark-side-of-offshore-development/" style="color: var(--fresh-teal);">As one analysis put it</a>: "The hidden challenges—technical debt, communication friction, security risks, and weak ownership—can silently drain resources and undermine product quality long before anyone notices."</p>
 
             <h3 style="color: var(--fresh-teal); font-size: 14px; margin-top: 32px; margin-bottom: 12px; letter-spacing: 0.04em;">Data security: A real concern for wellness businesses</h3>
-            <p style="color: rgba(255,255,255,0.7);">This is where it gets serious. dtXfy will handle HSA/FSA payments, membership data, and potentially HIPAA-adjacent health information. Offshore call centers and development shops have been at the center of major data breaches where customer information was actively sold.</p>
+            <p>This is where it gets serious. dtXfy will handle HSA/FSA payments, membership data, and potentially HIPAA-adjacent health information. Offshore call centers and development shops have been at the center of major data breaches where customer information was actively sold.</p>
 
             <div class="quote-block" style="margin-top: 20px;">
                 <p style="font-style: normal; font-family: 'Poppins', sans-serif; font-size: 13px;"><strong style="color: var(--fresh-teal);">Coinbase, 2024–2025:</strong> Offshore support agents at TaskUs in India were <a href="https://fortune.com/crypto/2025/05/29/coinbase-hack-the-community-taskus-bpos-teenagers/" style="color: var(--fresh-teal);">bribed $200 per screenshot</a> to capture and sell customer data. Over 69,000 users were affected. Estimated losses: $180–400 million. 226 employees were terminated. <a href="https://www.theblock.co/post/383790/coinbase-ceo-announces-first-arrest-in-india-over-insider-data-breach-more-still-to-come" style="color: var(--fresh-teal);">Arrests followed in India</a>.</p>
@@ -518,11 +527,11 @@
                 <p style="font-style: normal; font-family: 'Poppins', sans-serif; font-size: 13px;"><strong style="color: var(--fresh-teal);">BSNL Telecom, 2024:</strong> A breach at India's state-owned telecom compromised millions of users' data, which <a href="https://www.corbado.com/blog/data-breaches-India" style="color: var(--fresh-teal);">surfaced for sale on dark web marketplaces</a> shortly after.</p>
             </div>
 
-            <p style="color: rgba(255,255,255,0.7); margin-top: 20px;">The <a href="https://globalinitiative.net/analysis/joint-us-india-focus-on-cyber-scams-is-a-chance-to-curb-a-global-fraud-epidemic/" style="color: var(--fresh-teal);">Indian Cyber Crime Coordination Centre</a> reported an average of 7,000 cybercrime complaints per day in early 2024. This isn't fear-mongering—it's the operating environment. When your software handles customer PII and payment data, the provenance of your development team matters.</p>
+            <p style="margin-top: 20px;">The <a href="https://globalinitiative.net/analysis/joint-us-india-focus-on-cyber-scams-is-a-chance-to-curb-a-global-fraud-epidemic/" style="color: var(--fresh-teal);">Indian Cyber Crime Coordination Centre</a> reported an average of 7,000 cybercrime complaints per day in early 2024. This isn't fear-mongering—it's the operating environment. When your software handles customer PII and payment data, the provenance of your development team matters.</p>
 
             <h3 style="color: var(--fresh-teal); font-size: 14px; margin-top: 32px; margin-bottom: 12px; letter-spacing: 0.04em;">AI changed the math</h3>
-            <p style="color: rgba(255,255,255,0.7);">Here's the shift most people haven't caught up to yet: AI-assisted development has made American developers cost-competitive again. The productivity gains from tools like GitHub Copilot, Claude, and purpose-built AI workflows mean a small U.S. team can now deliver at speeds that previously required large offshore teams—with better quality, clearer communication, and full accountability under U.S. law.</p>
-            <p style="color: rgba(255,255,255,0.7);">At Assembly Labs, we've built our entire practice around this advantage. We leverage AI not as a gimmick, but as a force multiplier that lets us deliver enterprise-quality work at rates that compete with offshore—without the hidden costs, the security risks, or the technical debt that shows up six months later.</p>
+            <p>Here's the shift most people haven't caught up to yet: AI-assisted development has made American developers cost-competitive again. The productivity gains from tools like GitHub Copilot, Claude, and purpose-built AI workflows mean a small U.S. team can now deliver at speeds that previously required large offshore teams—with better quality, clearer communication, and full accountability under U.S. law.</p>
+            <p>At Assembly Labs, we've built our entire practice around this advantage. We leverage AI not as a gimmick, but as a force multiplier that lets us deliver enterprise-quality work at rates that compete with offshore—without the hidden costs, the security risks, or the technical debt that shows up six months later.</p>
         </div>
     </div>
 
@@ -546,8 +555,8 @@
         <div class="section-inner reveal">
             <h2>One more idea, <em>for fun</em>.</h2>
             <div class="divider"></div>
-            <p style="color: rgba(255,255,255,0.7);">Have you thought about running your studios with less overhead, fewer resources—and being open 24/7?</p>
-            <p style="color: rgba(255,255,255,0.7);">Think about the revenue opportunity. Customers book their rooms and sessions 100% remotely. They enter their pods using their cell phone to unlock the door. Off-hours, a virtual concierge handles questions and issues. Your on-site team focuses entirely on what matters: maintaining, sanitizing, and replenishing the rooms and materials.</p>
+            <p>Have you thought about running your studios with less overhead, fewer resources—and being open 24/7?</p>
+            <p>Think about the revenue opportunity. Customers book their rooms and sessions 100% remotely. They enter their pods using their cell phone to unlock the door. Off-hours, a virtual concierge handles questions and issues. Your on-site team focuses entirely on what matters: maintaining, sanitizing, and replenishing the rooms and materials.</p>
 
             <div class="two-sides" style="margin-top: 28px;">
                 <div class="side-card">
@@ -562,7 +571,7 @@
                 </div>
             </div>
 
-            <p style="color: rgba(255,255,255,0.7); margin-top: 24px;">This is Phase 5 thinking. Maybe further. But it's the kind of thing a software partner should be imagining alongside you—not just executing a spec. The best technology investments don't just solve today's problems. They open doors you hadn't considered yet.</p>
+            <p style="margin-top: 24px;">This is Phase 5 thinking. Maybe further. But it's the kind of thing a software partner should be imagining alongside you—not just executing a spec. The best technology investments don't just solve today's problems. They open doors you hadn't considered yet.</p>
 
             <div class="quote-block" style="margin-top: 24px;">
                 <p>A partner in software should think like a partner in your business.</p>
